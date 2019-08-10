@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:petcy/components/answer_list.dart';
 import 'package:petcy/components/material_container.dart';
 
 class QuestionPage extends StatelessWidget {

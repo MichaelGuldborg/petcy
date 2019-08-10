@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:petcy/components/rounded_button.dart';
-import 'package:petcy/pages/register_pet/sign_up_page.dart';
+import 'package:petcy/pages/register_pet/register_pet_page.dart';
 
-class SignUpWelcome extends StatelessWidget {
+class RegisterPetWelcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -38,7 +38,7 @@ class SignUpWelcome extends StatelessWidget {
               RoundedButton(
                 text: "Cool, let's go!",
                 onPressed: () {
-                  SignUpPageState.of(context).onNextPressed();
+                  RegisterPetPageState.of(context).onNextPressed();
                 },
               ),
             ],

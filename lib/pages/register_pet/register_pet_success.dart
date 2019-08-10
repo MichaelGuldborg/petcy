@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:petcy/app_colors.dart';
 import 'package:petcy/components/rounded_button.dart';
 import 'package:petcy/components/material_container.dart';
-import 'package:petcy/pages/register_pet/sign_up_page.dart';
+import 'package:petcy/pages/register_pet/register_pet_page.dart';
 
-class FinalPage extends StatelessWidget {
+class RegisterPetSuccess extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -47,7 +47,7 @@ class FinalPage extends StatelessWidget {
                     RoundedButton(
                       text: "Show me the plan",
                       onPressed: () {
-                        SignUpPageState.of(context).onNextPressed();
+                        RegisterPetPageState.of(context).onNextPressed();
                       },
                       inverted: true,
                     ),

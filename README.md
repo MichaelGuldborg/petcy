@@ -1,9 +1,13 @@
 
 
-# Augmented Reality Plant Decor flutter concept
+# Petcy Meal Planner UI/UX case study
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
-A concept app with a simple registration flow for signing up new pets to a custom meal plan made with <a href="https://flutter.dev" target="_blank">Flutter</a>\
+This is an implementation of the UI/UX case study done on a pet meal planner application by 
+[Guy Shomrom](https://uxdesign.cc/@guyshom) at this 
+[Article](https://uxdesign.cc/ui-ux-case-study-a-step-by-step-guide-to-the-process-of-designing-a-pet-diet-app-d635b911b648)
+
+This project is a [Flutter](https://flutter.dev) implementation of the on-boarding flow. 
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
@@ -13,18 +17,20 @@ A concept app with a simple registration flow for signing up new pets to a custo
 </p>
 
 <p float="left">
-  <img src="/assets/screenshots/home_page_01.jpg" width="200" />
-  <img src="/assets/screenshots/home_page_02.jpg" width="200" />
-  <img src="/assets/screenshots/home_page_03.jpg" width="200" />
-  <img src="/assets/screenshots/plant_picker_01.jpg" width="200" />
+  <img src="/assets/screenshots/register_pet_01.jpg" width="200" />
+  <img src="/assets/screenshots/register_pet_02.jpg" width="200" />
+  <img src="/assets/screenshots/register_pet_03.jpg" width="200" />
+  <img src="/assets/screenshots/register_pet_04.jpg" width="200" />
+  <img src="/assets/screenshots/register_pet_05.jpg" width="200" />
+  <img src="/assets/screenshots/register_pet_06.jpg" width="200" />
+  <img src="/assets/screenshots/register_pet_07.jpg" width="200" />
 </p>
 
 ## Key Features
 
-* Camera preview display with flip function
-* Draggable and zoomable picture overlay to view selected plant
-* Bottom panel view with animation
-* Plant picker with simple carousel to pick plant from "fetched" json list
+* Json state management
+* Material choice picker component
+* Slide animation page transition
 
 ## How To Use
 
@@ -59,7 +65,7 @@ You can [download](https://play.google.com/store/apps/details?id=com.queenstech.
 - [Design Inspiration](https://uxdesign.cc/ui-ux-case-study-a-step-by-step-guide-to-the-process-of-designing-a-pet-diet-app-d635b911b648)
 
 ## License
-MIT
+[MIT](/LICENSE)
 
 --
 

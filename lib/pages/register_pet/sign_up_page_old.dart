@@ -4,10 +4,10 @@ import 'package:petcy/components/progress_bar.dart';
 import 'package:petcy/components/slide_right_page_transitions_builder.dart';
 import 'package:petcy/models/pet.dart';
 import 'package:petcy/pages/register_pet/age_question_page.dart';
-import 'package:petcy/pages/register_pet/sign_up_success.dart';
+import 'package:petcy/pages/register_pet/register_pet_success.dart';
 import 'package:petcy/pages/register_pet/index_question_page.dart';
 import 'package:petcy/pages/register_pet/json_page.dart';
-import 'package:petcy/pages/register_pet/sign_up_welcome.dart';
+import 'package:petcy/pages/register_pet/register_pet_welcome.dart';
 
 class _SignUpPageStateProvider extends InheritedWidget {
   final SignUpPageState state;
@@ -108,7 +108,7 @@ class SignUpPageState extends State<SignUpPage> {
                     TargetPlatform.android: SlideRightPageTransitionsBuilder(),
                   }),
                 ),
-                home: SignUpWelcome(),
+                home: RegisterPetWelcome(),
                 onGenerateRoute: (RouteSettings settings) {
                   final String routeName = settings.name;
                   setState(() {
@@ -129,7 +129,7 @@ class SignUpPageState extends State<SignUpPage> {
   }
 
   final routes = {
-    "/welcome": (context) => SignUpWelcome(),
+    "/welcome": (context) => RegisterPetWelcome(),
     "/animal": (context) => IndexQuestionPage(
           question: "What type of pet do you have?",
           answers: ["dog", "cat"],
@@ -175,7 +175,7 @@ class SignUpPageState extends State<SignUpPage> {
             Navigator.of(context).pushNamed("/final");
           },
         ),
-    "/final": (context) => FinalPage(),
+    "/final": (context) => RegisterPetSuccess(),
     "/json": (context) => JsonPage(json: SignUpPageState.of(context).pet.toJson())
   };
 }

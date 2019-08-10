@@ -5,26 +5,26 @@ import 'package:petcy/models/pet.dart';
 import 'package:petcy/pages/register_pet/age_question_page.dart';
 import 'package:petcy/pages/register_pet/index_question_page.dart';
 import 'package:petcy/pages/register_pet/json_page.dart';
-import 'package:petcy/pages/register_pet/sign_up_success.dart';
-import 'package:petcy/pages/register_pet/sign_up_welcome.dart';
+import 'package:petcy/pages/register_pet/register_pet_success.dart';
+import 'package:petcy/pages/register_pet/register_pet_welcome.dart';
 
-class _SignUpPageStateProvider extends InheritedWidget {
-  final SignUpPageState state;
+class _RegisterPetPageStateProvider extends InheritedWidget {
+  final RegisterPetPageState state;
 
-  _SignUpPageStateProvider({this.state, child}) : super(child: child);
+  _RegisterPetPageStateProvider({this.state, child}) : super(child: child);
 
   @override
-  bool updateShouldNotify(_SignUpPageStateProvider old) => false;
+  bool updateShouldNotify(_RegisterPetPageStateProvider old) => false;
 }
 
-class SignUpPage extends StatefulWidget {
-  SignUpPageState createState() => SignUpPageState();
+class RegisterPetPage extends StatefulWidget {
+  RegisterPetPageState createState() => RegisterPetPageState();
 }
 
-class SignUpPageState extends State<SignUpPage> {
-  static SignUpPageState of(BuildContext context) {
-    return (context.inheritFromWidgetOfExactType(_SignUpPageStateProvider)
-            as _SignUpPageStateProvider)
+class RegisterPetPageState extends State<RegisterPetPage> {
+  static RegisterPetPageState of(BuildContext context) {
+    return (context.inheritFromWidgetOfExactType(_RegisterPetPageStateProvider)
+            as _RegisterPetPageStateProvider)
         .state;
   }
 
@@ -67,7 +67,7 @@ class SignUpPageState extends State<SignUpPage> {
       ),
     );
 
-    return _SignUpPageStateProvider(
+    return _RegisterPetPageStateProvider(
       state: this,
       child: WillPopScope(
         onWillPop: onBackPress,
@@ -113,16 +113,19 @@ class SignUpPageState extends State<SignUpPage> {
                 physics: NeverScrollableScrollPhysics(),
                 children: <Widget>[
                   Builder(
-                    builder: (context) => SignUpWelcome(),
+                    builder: (context) => RegisterPetWelcome(),
                   ),
                   Builder(
                     builder: (context) => IndexQuestionPage(
                       index: 1,
                       question: "What type of pet do you have?",
                       answers: ["dog", "cat"],
-                      icons: [Icons.android, Icons.accessible],
+                      icons: [
+                        Icons.font_download,
+                        Icons.format_bold,
+                      ],
                       onAnswer: (String answer) {
-                        SignUpPageState.of(context).pet.animal = answer;
+                        RegisterPetPageState.of(context).pet.animal = answer;
                         onNextPressed();
                       },
                     ),
@@ -131,10 +134,10 @@ class SignUpPageState extends State<SignUpPage> {
                     builder: (context) => IndexQuestionPage(
                       index: 2,
                       question:
-                          "Is your ${SignUpPageState.of(context).pet.animal} a male or female?",
+                          "Is your ${RegisterPetPageState.of(context).pet.animal} a male or female?",
                       answers: ["male", "female"],
                       onAnswer: (String answer) {
-                        SignUpPageState.of(context).pet.sex = answer;
+                        RegisterPetPageState.of(context).pet.sex = answer;
                         onNextPressed();
                       },
                     ),
@@ -143,10 +146,10 @@ class SignUpPageState extends State<SignUpPage> {
                     builder: (context) => AgeQuestionPage(
                       index: 3,
                       question:
-                          "How old is ${SignUpPageState.of(context).pet.sex == 'male' ? "he" : "she"}?",
+                          "How old is ${RegisterPetPageState.of(context).pet.sex == 'male' ? "he" : "she"}?",
                       onAnswer: (int months) {
-                        SignUpPageState.of(context).pet.months = months;
-                        print("Pet: ${SignUpPageState.of(context).pet.toJson()}");
+                        RegisterPetPageState.of(context).pet.months = months;
+                        print("Pet: ${RegisterPetPageState.of(context).pet.toJson()}");
                         onNextPressed();
                       },
                     ),
@@ -155,7 +158,7 @@ class SignUpPageState extends State<SignUpPage> {
                     builder: (context) => IndexQuestionPage(
                       index: 4,
                       question:
-                          "How would you describe ${SignUpPageState.of(context).pet.sex == 'male' ? "his" : "her"} body condition?",
+                          "How would you describe ${RegisterPetPageState.of(context).pet.sex == 'male' ? "his" : "her"} body condition?",
                       answers: [
                         "Skinny McBony",
                         "A bit underweight",
@@ -164,18 +167,18 @@ class SignUpPageState extends State<SignUpPage> {
                         "Obesepotamus",
                       ],
                       onAnswer: (String answer) {
-                        SignUpPageState.of(context).pet.weight = answer;
-                        print("Pet: ${SignUpPageState.of(context).pet.toJson()}");
+                        RegisterPetPageState.of(context).pet.weight = answer;
+                        print("Pet: ${RegisterPetPageState.of(context).pet.toJson()}");
                         onNextPressed();
                       },
                     ),
                   ),
                   Builder(
-                    builder: (context) => FinalPage(),
+                    builder: (context) => RegisterPetSuccess(),
                   ),
                   Builder(
                     builder: (context) => JsonPage(
-                      json: SignUpPageState.of(context).pet.toJson(),
+                      json: RegisterPetPageState.of(context).pet.toJson(),
                     ),
                   ),
                 ],
